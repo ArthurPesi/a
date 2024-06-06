@@ -1,11 +1,16 @@
 #include <stdio.h>
-int matrix[3][5] = {{0,1,1,1,1},
-                    {0,0,1,1,1},
-                    {3,1,1,1,1}};
-int seen[3][5];
+//0 = wall, 1 = walkable path, 3 = goal
+//Lots of global variables for convenience, but I'd recommend passing them as parameters in a real life situation
+int matrix[6][9] = {{1,1,1,0,0,0,0,0,0},
+                    {0,0,1,1,0,0,0,0,0},
+                    {0,0,0,1,1,0,0,0,0},
+                    {0,0,0,0,1,1,1,0,0},
+                    {0,0,0,0,0,0,1,1,0},
+                    {0,0,0,0,0,0,0,1,3}};
+int seen[6][9];
 int start[2] = {0,1};
-int height = 3;
-int length = 5;
+int height = 6;
+int length = 9;
 int dir[4][2] = {{-1,0},
     {0,1},
     {1,0},
