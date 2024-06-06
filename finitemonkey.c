@@ -4,13 +4,11 @@
 
 int main() {
     FILE *fptr;
-    int list[] = {12, 4, 2, 6, 8, 10};
-    int size = sizeof(list)/sizeof(int);
     char buf[1024];
     int value;
     do {
         if(!fgets(buf,1024,stdin)) {
-            printf("n deu pra escrever n");
+            printf("error");
             return 1;
         }
         value = atoi(buf);
