@@ -6,7 +6,7 @@ int main() {
     int size = sizeof(list)/sizeof(int);
     int lo = 0;
     int hi = size-1;
-    char buf[1024];
+    char buf[1024]; //1kb to make sure
     int value;
     do {
         if(!fgets(buf,1024,stdin)) {
