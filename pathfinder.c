@@ -11,12 +11,11 @@ int seen[6][9];
 int start[2] = {0,0};
 int height = 6;
 int length = 9;
-int dir[4][2] = {{-1,0},
-    {0,1},
-    {1,0},
-    {0,-1}
+int dir[4][2] = {{-1,0}, //one position above
+    {0,1}, //one position to the right
+    {1,0}, //one position below
+    {0,-1} //one position to the left
 };
-//criar uma array com as direções e botar as 4 chamadas em um for
 int walk(int *current) {
     if(seen[current[0]][current[1]]) {
         return 0;
