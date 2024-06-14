@@ -19,23 +19,28 @@ void mergeSort(int left, int middle, int right, int *list) {
     for(int loop2 = middle+1;loop2<middle+1+size2;loop2++) {
         list2[loop2-(middle+1)] = list[loop2];
     }
-    int i = left;
+    int i = left;//
+    int hold;
     int one = 0;
     int two = 0;
-    for(i;i<right && one<size1 && two<size2;i++) {
-        if(list1[one]<list2[two]) {
+    for(i;i<right && one<size1 && two<size2;i++) {//5,10
+        if(list1[one]<list2[two]) {//32,45
+            hold = list2[two];
             list[i] = list1[one];
             one++;
         } else {
+            hold = list1[one];
             list[i] = list2[two];
             two++;
         }
     }
-    for(one;one<size1;one++) {
+    list[i]=hold;
+    i++;
+    for(one;one<size1 && i < right;one++) {
         list[i] = list1[one];
         i++;
     }
-    for(two;two<size2;two++) {
+    for(two;two<size2 && i < right;two++) {
         list[i] = list2[two];
     }
     free(list1);
@@ -43,7 +48,7 @@ void mergeSort(int left, int middle, int right, int *list) {
 }
 
 int main() {
-    int list[] = {10,5,2,8,2,4,98,1};
+    int list[] = {10,5,45,32,3,5,78,4};
     int right = (sizeof(list)/sizeof(int))-1;
     int middle = (right)/2;
     mergeSort(0,middle, right, list);
