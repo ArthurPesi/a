@@ -1,4 +1,4 @@
-#include <windows.h>
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -32,7 +32,7 @@ void drawCanvas(struct array2d *canvas, int characterPosition[2]) {
             }
             printf("\n");
         }
-        Sleep(500);
+        sleep(500);
     }
 }
 
